@@ -40,6 +40,7 @@ def verify_jwt(authorization: str = Header(None)) -> dict:
     except httpx.HTTPError as e:
         last_error = e
 
+
     if SUPABASE_JWT_SECRET:
         try:
             payload = jwt.decode(
